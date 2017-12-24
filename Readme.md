@@ -43,11 +43,3 @@ Round 4: Water#10 has advantage over Fire#12 (Type Advantage)
 Round 5: Fighting#6 has advantage over Grass#2 (level advantage)
 
 Thus 3/5 battles are in advantage position in this order.
-
-Before you submit:
-Make sure your code reflects the practices that you think are good
-If you are using a version control like git, we appreciate smaller and frequent commits with meaningful messages
-If you have experience with unit tests or other testing frameworks, please demonstrate in your code
-We value a quality submission that takes time than a hasty submission that is done fast
-Please remember that the objective of this coding problem is not just to arrive at a solution to the problem, but it is about demonstrating your thought process and the path to arrive at the solution. So remember to engineer the solution with extensibility/adding more features to your code with minimal code change in your design. 
-If you do have automated testing experience, please add automated tests.
