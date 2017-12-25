@@ -238,4 +238,25 @@ public class PokemonCompartorTest {
         assertEquals(1,result);
     }
 
+    @Test
+    public void testShouldReturnOneWhenWaterPokemonOfHigherLevelComparedWithFireWithLowerLevel(){
+        Pokemon pokemon1 = PokemonFactory.getPokemon(PokemonType.WATER);
+        Pokemon pokemon2 = PokemonFactory.getPokemon(PokemonType.FIRE);
+        pokemon1.setLevel(20);
+        pokemon2.setLevel(12);
+
+        int result = pokemonCompartor.compare(pokemon1,pokemon2);
+        assertEquals(1,result);
+    }
+
+    @Test
+    public void testShouldReturnOneWhenWaterPokemonOfHigherLevelComparedWithElectricWithLowerLevel(){
+        Pokemon pokemon1 = PokemonFactory.getPokemon(PokemonType.WATER);
+        Pokemon pokemon2 = PokemonFactory.getPokemon(PokemonType.ELECTRIC);
+        pokemon1.setLevel(2 * pokemon2.getLevel());
+
+        int result = pokemonCompartor.compare(pokemon1,pokemon2);
+        assertEquals(1,result);
+    }
+
 }

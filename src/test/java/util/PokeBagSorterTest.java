@@ -57,9 +57,11 @@ public class PokeBagSorterTest {
     @Test
     public void testCase1Sort(){
         PokeBagSorter sorter = new PokeBagSorter();
-        sorter.sort(myPokeBag,opponentPokeBag);
+        Integer score = sorter.sort(myPokeBag,opponentPokeBag);
         String pokeBagString = "ELECTRIC#12;FIRE#10;PSYCHIC#10;WATER#20;FIGHTING#6";
         assertEquals(pokeBagString,myPokeBag.toString());
+        assertEquals(new Integer(3),new Integer(score));
+
     }
-    
+
 }

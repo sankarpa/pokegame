@@ -55,14 +55,18 @@ public class PokemonChooser {
 
         if(result.getResultList().isEmpty()){
             Optional<Pokemon> any = pokeBag.getAllPokemons().stream().filter(pokemon1 -> (pokemon.getLevel() == pokemon1.getLevel() && pokemon1.isAvailable())).findAny();
-            if (any.isPresent())
+            if (any.isPresent()){
                 result.getResultList().add(any.get());
+            }
         }
 
         if(result.getResultList().isEmpty()){
             Optional<Pokemon> max = pokeBag.getAllPokemons().stream().filter(pokemon1 -> pokemon1.isAvailable()).max(Comparator.comparing(Pokemon::getLevel));
-            if(max.isPresent())
+            if(max.isPresent()){
                 result.getResultList().add(max.get());
+                result.setScore(new PokemonCompartor().compare(max.get(),pokemon));
+            }
+
         }
 
         result.getResultList().stream().sorted(Comparator.comparing(pokemon1 -> pokemon.getLevel())).collect(Collectors.toList());
