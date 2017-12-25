@@ -11,7 +11,5 @@ public class PokemonBluePrint {
     @Default
     PokemonType type = PokemonType.ELECTRIC;
     @Default
-    Integer xp = 1000;
-    @Default
     Integer level = 10;
 }

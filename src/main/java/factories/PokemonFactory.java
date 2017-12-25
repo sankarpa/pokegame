@@ -9,6 +9,7 @@ import model.PokemonType;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class PokemonFactory {
 
@@ -47,4 +48,5 @@ public class PokemonFactory {
         }
         return pokemonList;
     }
+
 }

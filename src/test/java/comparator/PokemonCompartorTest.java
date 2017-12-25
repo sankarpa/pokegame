@@ -228,4 +228,14 @@ public class PokemonCompartorTest {
         assertEquals(-1,result);
     }
 
+    @Test
+    public void testShouldReturnOneWhenElectricPokemonOfHigherLevelComparedWithElectricWithLowerLevel(){
+        Pokemon pokemon1 = PokemonFactory.getPokemon(PokemonType.ELECTRIC);
+        Pokemon pokemon2 = PokemonFactory.getPokemon(PokemonType.ELECTRIC);
+        pokemon1.setLevel(2 * pokemon1.getLevel());
+
+        int result = pokemonCompartor.compare(pokemon1,pokemon2);
+        assertEquals(1,result);
+    }
+
 }
