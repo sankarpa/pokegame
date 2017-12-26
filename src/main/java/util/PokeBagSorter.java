@@ -31,7 +31,7 @@ public class PokeBagSorter {
         myPokeBag.setSortedPokemons(sortedPokemon);
         System.out.println("Final sort : " + myPokeBag.toString());
         System.out.print("Sort Score:" + sortScore + "/" + opponentPokemons.size());
-        if (sortScore >= 3) {
+        if (sortScore >= 3 || sortScore > opponentPokemons.size()/2) {
             System.out.print(" - Possible Victory");
         } else {
             System.out.print(" - No Chance to win");
