@@ -1,24 +1,22 @@
 package util;
 
-import factories.PokemonFactory;
 import model.PokeBag;
 import model.Pokemon;
 import model.PokemonType;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
-import static factories.PokemonFactory.*;
-import static org.junit.Assert.*;
+import static factories.PokemonFactory.getPokemon;
+import static org.junit.Assert.assertEquals;
 
 
 public class PokeBagSorterTest {
 
-    private  PokeBag myPokeBag = new PokeBag();
-    private  PokeBag opponentPokeBag = new PokeBag();
+    private PokeBag myPokeBag = new PokeBag();
+    private PokeBag opponentPokeBag = new PokeBag();
 
     @Before
-    public  void populatePokeBags(){
+    public void populatePokeBags() {
         Pokemon firePokemon = getPokemon(PokemonType.FIRE);
         Pokemon fightingPokemon = getPokemon(PokemonType.FIGHTING);
         Pokemon waterPokemon = getPokemon(PokemonType.WATER);
@@ -55,13 +53,12 @@ public class PokeBagSorterTest {
     }
 
     @Test
-    public void testCase1Sort(){
+    public void testCase1Sort() {
         PokeBagSorter sorter = new PokeBagSorter();
-        Integer score = sorter.sort(myPokeBag,opponentPokeBag);
+        Integer score = sorter.sort(myPokeBag, opponentPokeBag);
         String pokeBagString = "ELECTRIC#12;FIRE#10;PSYCHIC#10;WATER#20;FIGHTING#6";
-        assertEquals(pokeBagString,myPokeBag.toString());
-        assertEquals(new Integer(3),new Integer(score));
-
+        assertEquals(pokeBagString, myPokeBag.toString());
+        assertEquals(new Integer(3), new Integer(score));
     }
 
 }

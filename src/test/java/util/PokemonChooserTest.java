@@ -19,7 +19,7 @@ public class PokemonChooserTest {
 
 
     @BeforeClass
-    public static void populatePokeBag(){
+    public static void populatePokeBag() {
 
         Pokemon firePokemon = getPokemon(PokemonType.FIRE);
         Pokemon fightingPokemon = getPokemon(PokemonType.FIGHTING);
@@ -49,121 +49,121 @@ public class PokemonChooserTest {
     }
 
     @Test
-    public void testShouldChooseAndReturnElectricAndWaterPokemonForWaterTypeFromPokeBag(){
+    public void testShouldChooseAndReturnElectricAndWaterPokemonForWaterTypeFromPokeBag() {
         Pokemon pokemon = PokemonFactory.getPokemon(PokemonType.WATER);
         PokemonChooser chooser = new PokemonChooser(myPokeBag);
         List<Pokemon> aggressivePokemon = chooser.findAggressivePokemonByType(pokemon).getResultList();
-        assertEquals(2,aggressivePokemon.size());
-        assertEquals(PokemonType.ELECTRIC,aggressivePokemon.get(0).getType());
-        assertEquals(PokemonType.WATER,aggressivePokemon.get(1).getType());
+        assertEquals(2, aggressivePokemon.size());
+        assertEquals(PokemonType.ELECTRIC, aggressivePokemon.get(0).getType());
+        assertEquals(PokemonType.WATER, aggressivePokemon.get(1).getType());
 
     }
 
     @Test
-    public void testShouldChooseAndReturnFirePokemonForGrassTypeFromPokeBag(){
+    public void testShouldChooseAndReturnFirePokemonForGrassTypeFromPokeBag() {
         Pokemon pokemon = PokemonFactory.getPokemon(PokemonType.GRASS);
         PokemonChooser chooser = new PokemonChooser(myPokeBag);
         List<Pokemon> aggressivePokemon = chooser.findAggressivePokemonByType(pokemon).getResultList();
-        assertEquals(1,aggressivePokemon.size());
-        assertEquals(PokemonType.FIRE,aggressivePokemon.get(0).getType());
+        assertEquals(1, aggressivePokemon.size());
+        assertEquals(PokemonType.FIRE, aggressivePokemon.get(0).getType());
     }
 
     @Test
-    public void testShouldChooseAndReturnFirePokemonForGhostTypeFromPokeBag(){
+    public void testShouldChooseAndReturnFirePokemonForGhostTypeFromPokeBag() {
         Pokemon pokemon = PokemonFactory.getPokemon(PokemonType.GHOST);
         PokemonChooser chooser = new PokemonChooser(myPokeBag);
         List<Pokemon> aggressivePokemon = chooser.findAggressivePokemonByType(pokemon).getResultList();
-        assertEquals(2,aggressivePokemon.size());
-        assertEquals(PokemonType.FIRE,aggressivePokemon.get(0).getType());
+        assertEquals(2, aggressivePokemon.size());
+        assertEquals(PokemonType.FIRE, aggressivePokemon.get(0).getType());
     }
 
     @Test
-    public void testShouldChooseAndReturnGrassAndGhostAndFightingPokemonForElectricTypeFromPokeBag(){
+    public void testShouldChooseAndReturnGrassAndGhostAndFightingPokemonForElectricTypeFromPokeBag() {
         Pokemon pokemon = PokemonFactory.getPokemon(PokemonType.ELECTRIC);
         PokemonChooser chooser = new PokemonChooser(myPokeBag2);
         List<Pokemon> aggressivePokemon = chooser.findAggressivePokemonByType(pokemon).getResultList();
-        assertEquals(3,aggressivePokemon.size());
-        assertEquals(PokemonType.GRASS,aggressivePokemon.get(0).getType());
-        assertEquals(PokemonType.GHOST,aggressivePokemon.get(1).getType());
-        assertEquals(PokemonType.FIGHTING,aggressivePokemon.get(2).getType());
+        assertEquals(3, aggressivePokemon.size());
+        assertEquals(PokemonType.GRASS, aggressivePokemon.get(0).getType());
+        assertEquals(PokemonType.GHOST, aggressivePokemon.get(1).getType());
+        assertEquals(PokemonType.FIGHTING, aggressivePokemon.get(2).getType());
 
     }
 
     @Test
-    public void testShouldChooseAndReturnGrassAndGhostPokemonForFightingTypeFromPokeBag(){
+    public void testShouldChooseAndReturnGrassAndGhostPokemonForFightingTypeFromPokeBag() {
         Pokemon pokemon = PokemonFactory.getPokemon(PokemonType.FIGHTING);
         PokemonChooser chooser = new PokemonChooser(myPokeBag2);
         List<Pokemon> aggressivePokemon = chooser.findAggressivePokemonByType(pokemon).getResultList();
-        assertEquals(2,aggressivePokemon.size());
-        assertEquals(PokemonType.GRASS,aggressivePokemon.get(0).getType());
-        assertEquals(PokemonType.GHOST,aggressivePokemon.get(1).getType());
+        assertEquals(2, aggressivePokemon.size());
+        assertEquals(PokemonType.GRASS, aggressivePokemon.get(0).getType());
+        assertEquals(PokemonType.GHOST, aggressivePokemon.get(1).getType());
 
     }
 
     @Test
-    public void testShouldChooseAndReturnPsychicAndFirePokemonForGhostTypeFromPokeBag(){
+    public void testShouldChooseAndReturnPsychicAndFirePokemonForGhostTypeFromPokeBag() {
         Pokemon pokemon = PokemonFactory.getPokemon(PokemonType.GHOST);
         PokemonChooser chooser = new PokemonChooser(myPokeBag);
         List<Pokemon> aggressivePokemon = chooser.findAggressivePokemonByType(pokemon).getResultList();
-        assertEquals(2,aggressivePokemon.size());
-        assertEquals(PokemonType.FIRE,aggressivePokemon.get(0).getType());
-        assertEquals(PokemonType.PSYCHIC,aggressivePokemon.get(1).getType());
+        assertEquals(2, aggressivePokemon.size());
+        assertEquals(PokemonType.FIRE, aggressivePokemon.get(0).getType());
+        assertEquals(PokemonType.PSYCHIC, aggressivePokemon.get(1).getType());
     }
 
     @Test
-    public void testShouldChooseAndReturnWaterPokemonForFireTypeFromPokeBag(){
+    public void testShouldChooseAndReturnWaterPokemonForFireTypeFromPokeBag() {
         Pokemon pokemon = PokemonFactory.getPokemon(PokemonType.FIRE);
         PokemonChooser chooser = new PokemonChooser(myPokeBag2);
         List<Pokemon> aggressivePokemon = chooser.findAggressivePokemonByType(pokemon).getResultList();
-        assertEquals(1,aggressivePokemon.size());
-        assertEquals(PokemonType.WATER,aggressivePokemon.get(0).getType());
+        assertEquals(1, aggressivePokemon.size());
+        assertEquals(PokemonType.WATER, aggressivePokemon.get(0).getType());
     }
 
     @Test
-    public void testShouldReturnHigherLevelPokemonIfAggressionTypeisNotPresent(){
+    public void testShouldReturnHigherLevelPokemonIfAggressionTypeisNotPresent() {
         Pokemon pokemon = PokemonFactory.getPokemon(PokemonType.WATER);
         PokemonChooser chooser = new PokemonChooser(myPokeBag2);
         List<Pokemon> aggressivePokemon = chooser.findAggressivePokemonByType(pokemon).getResultList();
-        assertEquals(1,aggressivePokemon.size());
-        assertNotEquals(PokemonType.ELECTRIC,aggressivePokemon.get(0).getType());
+        assertEquals(1, aggressivePokemon.size());
+        assertNotEquals(PokemonType.ELECTRIC, aggressivePokemon.get(0).getType());
         assertTrue(pokemon.getLevel() < aggressivePokemon.get(0).getLevel());
     }
 
     @Test
-    public void testShouldReturnElectricPokemonForWaterPokemon(){
+    public void testShouldReturnElectricPokemonForWaterPokemon() {
         Pokemon pokemon = PokemonFactory.getPokemon(PokemonType.WATER);
         PokemonChooser chooser = new PokemonChooser(myPokeBag);
         List<Pokemon> aggressivePokemon = chooser.findAggressivePokemonByType(pokemon).getResultList();
-        assertEquals(PokemonType.ELECTRIC,aggressivePokemon.get(0).getType());
-        assertEquals(new Integer(12),new Integer(aggressivePokemon.get(0).getLevel()));
+        assertEquals(PokemonType.ELECTRIC, aggressivePokemon.get(0).getType());
+        assertEquals(new Integer(12), new Integer(aggressivePokemon.get(0).getLevel()));
     }
 
     @Test
-    public void testShouldReturnFirePokemonForFighting(){
+    public void testShouldReturnFirePokemonForFighting() {
         Pokemon pokemon = PokemonFactory.getPokemon(PokemonType.FIGHTING);
         PokemonChooser chooser = new PokemonChooser(myPokeBag);
         List<Pokemon> aggressivePokemon = chooser.findAggressivePokemonByType(pokemon).getResultList();
-        assertEquals(PokemonType.FIRE,aggressivePokemon.get(0).getType());
-        assertEquals(new Integer(10),new Integer(aggressivePokemon.get(0).getLevel()));
+        assertEquals(PokemonType.FIRE, aggressivePokemon.get(0).getType());
+        assertEquals(new Integer(10), new Integer(aggressivePokemon.get(0).getLevel()));
     }
 
     @Test
-    public void testShouldReturnPsychicPokemonForPsychicOfEqualLevel(){
+    public void testShouldReturnPsychicPokemonForPsychicOfEqualLevel() {
         Pokemon pokemon = PokemonFactory.getPokemon(PokemonType.PSYCHIC);
         PokemonChooser chooser = new PokemonChooser(myPokeBag);
         List<Pokemon> aggressivePokemon = chooser.findAggressivePokemonByType(pokemon).getResultList();
-        assertEquals(PokemonType.PSYCHIC,aggressivePokemon.get(0).getType());
-        assertEquals(new Integer(10),new Integer(aggressivePokemon.get(0).getLevel()));
+        assertEquals(PokemonType.PSYCHIC, aggressivePokemon.get(0).getType());
+        assertEquals(new Integer(10), new Integer(aggressivePokemon.get(0).getLevel()));
     }
 
     @Test
-    public void testShouldReturnWaterPokemonForFire(){
+    public void testShouldReturnWaterPokemonForFire() {
         Pokemon pokemon = PokemonFactory.getPokemon(PokemonType.FIRE);
         pokemon.setLevel(12);
         PokemonChooser chooser = new PokemonChooser(myPokeBag);
         List<Pokemon> aggressivePokemon = chooser.findAggressivePokemonByType(pokemon).getResultList();
-        assertEquals(PokemonType.WATER,aggressivePokemon.get(0).getType());
-        assertEquals(new Integer(20),new Integer(aggressivePokemon.get(0).getLevel()));
+        assertEquals(PokemonType.WATER, aggressivePokemon.get(0).getType());
+        assertEquals(new Integer(20), new Integer(aggressivePokemon.get(0).getLevel()));
     }
 
 }
