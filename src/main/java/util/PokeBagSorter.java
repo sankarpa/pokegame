@@ -18,7 +18,9 @@ public class PokeBagSorter {
         Integer sortScore = 0;
         for (Pokemon pokemon : opponentPokemons) {
             PokemonChooserResult aggressivePokemonByType = chooser.findAggressivePokemonByType(pokemon);
-            sortScore += aggressivePokemonByType.getScore();
+            if(aggressivePokemonByType.getScore()> 0)
+             sortScore += aggressivePokemonByType.getScore();
+
             List<Pokemon> aggressivePokemons = aggressivePokemonByType.getResultList();
             Pokemon chosenPokemon = aggressivePokemons.get(0);
             chosenPokemon.setAvailable(false);
